@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Beer Money';
+  src: url(../fonts/beer.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@white: #fff;
+@beer: #EBBB40;
+
+body {
+  background: url(../images/black.jpg) 0 0 / cover no-repeat;
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 50px;
+  color: @white;
+  font-family: 'Beer Money';
+  font-size: 40px;
+  line-height: 1;
+}
+
+.z-index-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 24, 24, 0.5);
+}
+
+h2 {
+  color: @beer;
+  font-size: 1em;
+}
+
+.menu {
+  margin-top: 20px;
+  padding: 0; 
+  font-size: 0.8em;
+
+  >li {
+    align-items: center;
+
+    display: flex; 
+    margin-bottom: 0.5em; 
+  
+    &::before {
+      content: ''; 
+      border-bottom: 5px dotted #ccc; 
+      flex-grow: 1; 
+      order: 2; 
+      margin: 0 15px; 
+    }
+
+    .product {
+      .description {
+        font-size: 0.65em;
+        color: @beer;
+      }
+    }
+  }
+
+  .value {
+    order: 3; 
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 0;
+      margin: 0;
+
+      .volume {
+        font-size: 0.8em;
+      }
+      
+    }
+    .price {
+      font-size: 1.1em;
+      &::after {
+        font-size: 0.7em;
+        content: 'р.';
+      }
+    }
+  }
+}
